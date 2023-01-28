@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import List from './components/List/List';
+import FakeApi from './FakeApi';
 
 const Container = styled.div`
   width: 90vw;
@@ -12,13 +14,17 @@ const Container = styled.div`
   background-color: #ddff00;
 `;
 
+
 const App = () => {
+  const [ birthdayList, setBirthdayList ] = useState(FakeApi);
+
+
   return (
     <Container>
-      <h1>Do not forget</h1>
-      <h3>1 birthday today</h3>
-      <div>birthday List</div>
-      <button>Clear List</button>
+      <h1>Happy Birthday 🥳</h1>
+      <h3>{birthdayList.length} {birthdayList.length != 0 ? "aniversários" : "aniversário"} </h3>
+      <List birthdayList={birthdayList}/>
+      <button onClick={() => setBirthdayList([])}>Clear List</button>
     </Container>
   )
 }
