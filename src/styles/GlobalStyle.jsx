@@ -14,6 +14,14 @@ const GlobalStyles = createGlobalStyle`
         background-color: #ddff00;
     }
 
+    ul {
+        list-style-type: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
     #root {
         width: 100%;
     }
