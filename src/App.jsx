@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import List from './components/List/List';
 import FakeApi from './FakeApi';
 import Button from './components/Button/Button';
+import Header from './components/Header/Header';
 
 const Container = styled.div`
   width: 90vw;
@@ -23,8 +24,11 @@ const App = () => {
 
   return (
     <Container>
-      <h1>Happy Birthday 🥳</h1>
-      <h3>{birthdayList.length} {birthdayList.length != 0 ? "aniversários" : "aniversário"} </h3>
+      <Header>
+        Happy Birthday 🥳
+        <br />
+        {birthdayList.length} {birthdayList.length != 0 ? "aniversários" : "aniversário"} 
+      </Header>
       <List birthdayList={birthdayList}/>
       <Button onClick={() => setBirthdayList([])}>Clear List</Button>
     </Container>
